@@ -1,4 +1,6 @@
 package com.devweb.Initiationjee.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,9 +11,9 @@ public class Service {
     private int id;
     @Column(length = 30)
     private String libelle;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy ="service")
+    @OneToMany(mappedBy ="service")
     private List <Employe> employes;
-
+   // @JsonBackReference
     public List<Employe> getEmployes() {
         return employes;
     }

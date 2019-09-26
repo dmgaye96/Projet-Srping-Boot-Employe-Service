@@ -1,5 +1,6 @@
 package com.devweb.Initiationjee.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class Employe {
     private int salaire;
     @JoinColumn(name = "service_id",referencedColumnName ="id")
     @ManyToOne(optional = false)
+  //  @JsonManagedReference
     private Service service;
 
 
